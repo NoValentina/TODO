@@ -3,7 +3,7 @@ import "./style.css";
 
 const Header = () =>
 	<div className="Header">
-		<header>TODO</header>
+		<header>todos</header>
 	</div>;
 
 export default Header;

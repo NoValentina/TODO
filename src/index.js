@@ -5,11 +5,14 @@ import { createStore, applyMiddleware } from "redux";
 import registerServiceWorker from "./registerServiceWorker";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import  thunk  from 'redux-thunk';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+
 
 
 import "./index.css";
 import App from "./App";
 import reducer from "./reducers";
+import Active from './Active';
 
 const store = createStore(
 	reducer,composeWithDevTools(applyMiddleware(thunk))
@@ -17,7 +20,12 @@ const store = createStore(
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<Router>
+	    <Switch>
+	      <Route exact path="/" component={App} />
+	      <Route path="/active" component={Active} />
+	    </Switch>
+    </Router>
 	</Provider>,
 	document.getElementById("root")
 );

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import "./style.css";
+import { getTasks } from '../actions/tasks';
+import Menu from '../Menu';
 
 class Content extends Component {
 	addNote() {
@@ -43,7 +45,7 @@ class Content extends Component {
 					<button onClick={() => this.findTask()}>Find Note</button>
 				</div>
 				<div>
-					<button onClick={() =>this.props.onGetTasks}>Get tasks</button>
+					<button onClick={this.props.onGetTasks}>Get tasks</button>
 				</div>
 				<ul>
 					{this.props.tasks.map((task, index) =>
@@ -52,6 +54,7 @@ class Content extends Component {
 						</li>
 					)}
 				</ul>
+				<Menu />
 			</div>
 		);
 	}
@@ -72,6 +75,9 @@ export default connect(
 		onFindNote: name => {
 			console.log("name", name);
 			dispatch({ type: "FIND_TASK", payload: name });
+		},
+		onGetTasks: () => {
+			 dispatch(getTasks());
 		}
 	})
 )(Content);

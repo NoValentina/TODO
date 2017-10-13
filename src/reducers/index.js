@@ -1,13 +1,33 @@
-import { combineReducers } from 'redux';
-import { routeReducer } from 'react-router-redux';
+const initialState = [];
 
-import tasks from './tasks';
-import targets from './targets';
-import filterTasks from './filterTasks';
+export default function todos(state = initialState, action) {
+	switch (action.type) {
+		case 'ADD_TASK':
+			return [
+				...state,
+				{
+					text: action.text,
+					id: state.length,
+				}
+			];
+			break;
 
-export default combineReducers ( {
-  routing: routeReducer,
-  tasks,
-  targets,
-  filterTasks
-})
+		case 'DELETE_TASK':
+			const items = state.filter(task => task.id !== action.id);
+
+			return items
+			break;
+
+		case 'TOGGLE_TASK':
+			const toggledTasks = state.map(todo =>
+				todo.id === action.id ? { ...todo, isChecked: !todo.isChecked } : todo)
+
+			return toggledTasks;
+			break;
+
+
+		default:
+			return state;
+			break;
+	}
+}

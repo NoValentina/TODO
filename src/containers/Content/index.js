@@ -5,13 +5,7 @@ import { connect } from "react-redux";
 import { getTasks } from '../../actions';
 
 import "./style.css";
-import Filter from '../../components/filter';
-//
-// const Filters = {
-// 	['all']: () => true,
-//   ['active']: task => !task.isChecked,
-// 	['completed']: task => task.isChecked,
-// };
+import ToDoList from '../../components/list';
 
 class Content extends Component {
 	addNote() {
@@ -19,44 +13,26 @@ class Content extends Component {
 			console.log(this.props.actions)
 			this.props.actions.addTodo(this.noteInput.value);
 			this.noteInput.value = "";
-		};
-	}
-
-		deleteNote(id) {
-			this.props.actions.deleteTodo(id)
-	}
-
-		handleOnСheckbox(id) {
-			this.props.actions.toggleTodo(id);
 		}
+	}
+
 
 	render() {
+		console.log(this.props)
 		return (
 			<div>
-				<div>
-					<input
-						type="text"
-						ref={input => {
-							this.noteInput = input;
-						}}
-					/>
-					<button onClick={() => this.addNote()}>add Note</button>
-				</div>
-
-				<ul>
-					{this.props.tasks.map((task, id) =>
-							<li  key={id}>
-								<input id={task.id} ref="checkbox" checked={task.isChecked} type="checkbox" onChange={ () => this.handleOnСheckbox(task.id)}  />
-								<label className={task.isChecked ? 'lined-through' : ''} onClick={() => this.deleteNote(task.id)}>{task.text} </label>
-						</li>
-					)}
-
-				</ul>
-
+				<input
+					type="text"
+					ref={input => {
+						this.noteInput = input;
+					}}
+				/>
+				<button onClick={() => this.addNote()}>add Note</button>
+				<ToDoList tasks={this.props.tasks} actions={this.props.actions}/>
 			</div>
-		);
-	}
-}
+			)
+	 }
+};
 
 function mapStateToProps(state) {
   return { tasks: state }

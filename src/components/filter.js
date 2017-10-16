@@ -8,9 +8,9 @@ class Filter extends Component {
   render() {
     return (
       <div>
-        <span onClick={() => this.filterTasks('all')}>ALL</span>
-        <span onClick={() => this.filterTasks('active')}>Active</span>
-        <span onClick={() => this.filterTasks('completed')}>Completed</span>
+        <span className="filter" onClick={() => this.filterTasks('all')}>ALL</span>
+        <span className="filter" onClick={() => this.filterTasks('active')}>Active</span>
+        <span className="filter" onClick={() => this.filterTasks('completed')}>Completed</span>
       </div>
     )
   }

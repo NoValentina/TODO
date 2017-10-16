@@ -7,18 +7,21 @@ import { getTasks } from '../../actions';
 import "./style.css";
 import ToDoList from '../../components/list';
 
+
 class Content extends Component {
 	addNote() {
 		if (this.noteInput.value !== "") {
 			console.log(this.props.actions)
 			this.props.actions.addTodo(this.noteInput.value);
 			this.noteInput.value = "";
+
+			localStorage.setItem("key", this.noteInput.value);
+
 		}
 	}
 
 
 	render() {
-		console.log(this.props)
 		return (
 			<div>
 				<input

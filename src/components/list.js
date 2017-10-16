@@ -50,16 +50,3 @@ class ToDoList extends Component {
 
 
 export default ToDoList;
-
-
-	// getTodos() {
-	// 	const { tasks } = this.props;
-	// 	console.log(tasks.length)
-	//
-	// 	if (tasks.length > 0) {
-	// 		// console.log('here', tasks.filterBy)
-	// 		return tasks.filter(Filters[tasks]);
-	// 	}
-	//
-	// 	return tasks;
-	// }

@@ -1,0 +1,10 @@
+.filter {
+  margin: 0 8px;
+  border: none;
+  background-color: transparent;
+  color: #191970;
+}
+
+.filterSelected {
+  border: 1px solid #000080;
+}

@@ -4,19 +4,15 @@ import { bindActionCreators } from 'redux'
 import { connect } from "react-redux";
 import { getTasks } from '../../actions';
 
-import "./style.css";
-import ToDoList from '../../components/list';
+import ToDoList from '../../components/List';
 
+import "./style.css";
 
 class Content extends Component {
 	addNote() {
 		if (this.noteInput.value !== "") {
-			console.log(this.props.actions)
 			this.props.actions.addTodo(this.noteInput.value);
 			this.noteInput.value = "";
-
-			localStorage.setItem("key", this.noteInput.value);
-
 		}
 	}
 
@@ -38,11 +34,11 @@ class Content extends Component {
 };
 
 function mapStateToProps(state) {
-  return { tasks: state }
+	return { tasks: state }
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) }
+	return { actions: bindActionCreators(actions, dispatch) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

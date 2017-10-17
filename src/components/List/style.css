@@ -1,0 +1,15 @@
+
+ul {
+  background-color: transparent;
+  list-style: none;
+  color: white;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.listTasks {
+  align-self: center;
+  margin-bottom: 20px;
+}

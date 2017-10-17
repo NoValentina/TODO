@@ -12,3 +12,35 @@
   color: #A5A2A2;
   transition: color 0.4s;
 }
+
+.addTasks {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.addingTasks {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.nameTasks {
+  background-color: transparent;
+  width: 720px;
+  height: 25px;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 1px solid #191970;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.addTasks-btn {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+  background-color: #191970;
+  border: 1px solid #191970;
+  font-size: 14px;
+  border-radius: 0 6px 6px 0;
+}

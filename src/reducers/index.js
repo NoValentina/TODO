@@ -6,23 +6,25 @@ const initialState = {
 export default function todos(state = initialState, action) {
 	switch (action.type) {
 		case 'ADD_TODO':
-		console.log(state)
 			const newItems = [...state.items, {
-	      id: state.items.length,
-	      text: action.text,
-	      isChecked: false
-	    }];
+				id: Math.random(),
+				text: action.text,
+				isChecked: false
+			}];
 
-	    return {
-	      ...state,
-	      items: newItems,
-	    }
+			return {
+				...state,
+				items: newItems,
+			}
 			break;
 
 		case 'DELETE_TODO':
 			const items = state.items.filter(task => task.id !== action.id);
 
-			return items
+			return {
+				...state,
+				items
+			}
 			break;
 
 		case 'TOGGLE_TODO':

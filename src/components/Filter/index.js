@@ -8,12 +8,12 @@ class Filter extends Component {
   }
 
   render() {
-    const { filterBy } = this.props.tasks;
-
+    const {filterBy} = this.props.tasks;
+    console.log(filterBy, 'gfdgd')
     return (
-      <div>
+      <div className="filter-list">
         <span
-          className={filterBy === 'all' ? 'filterSelected' : 'filter'}
+          className={'filter' + (filterBy === 'all' ? 'filterSelected' : '')}
           onClick={() => this.filterTasks('all')}
         >
           ALL

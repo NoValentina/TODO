@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   align-self: center;
+  margin: 0 200px;
 }
 
 .addingTasks {
@@ -32,15 +33,19 @@
   color: white;
   font-size: 20px;
   padding: 5px 10px;
-  border: 1px solid #191970;
+  border: 1px solid white;
   font-family: 'Gloria Hallelujah', cursive;
 }
 
 .addTasks-btn {
   font-family: 'Gloria Hallelujah', cursive;
-  color: white;
-  background-color: #191970;
-  border: 1px solid #191970;
+  color: black;
+  background-color: GhostWhite;
+  border: 1px solid GhostWhite;
   font-size: 14px;
   border-radius: 0 6px 6px 0;
+}
+
+input[placeholder] {
+  font-size: 12px;
 }

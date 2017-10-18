@@ -2,9 +2,14 @@
   margin: 0 8px;
   border: none;
   background-color: transparent;
-  color: #191970;
+  color: white;
 }
 
 .filterSelected {
   border: 1px solid #000080;
+  color: #191970;
+}
+
+.filter-list {
+  margin: 0 40px;
 }

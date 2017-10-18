@@ -32,14 +32,14 @@ class ToDoList extends Component {
 								return (
 									<li key={Math.random()}>
 										<input id={task.id} ref="checkbox" checked={task.isChecked} type="checkbox" onChange={ () => this.handleOnСheckbox(task.id)}  />
-										<label className={task.isChecked ? 'lined-through' : ''} onClick={() => this.deleteNote(task.id)}>{task.text} </label>
+										<label className={task.isChecked ? 'lined-through' : 'label_name'} onClick={() => this.deleteNote(task.id)}>{task.text} </label>
 									</li>
 								)
 							})
 						}
 					</ul>
 
-				<Filter filteredTodo={filteredTodo} actions={this.props.actions} tasks={this.props}/>
+				<Filter filteredTodo={this.props.tasks.filterBy} actions={this.props.actions} tasks={this.props}/>
 
 			</div>
 		)

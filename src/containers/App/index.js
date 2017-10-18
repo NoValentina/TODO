@@ -8,9 +8,11 @@ import Content from "../Content";
 class App extends Component {
 	render() {
 		return (
-			<div className="addTodo">
-				<Header />
-				<Content />
+			<div className="todo">
+				<div className="layer">
+					<Header />
+					<Content />
+				</div>
 			</div>
 		)
 	}

@@ -10,6 +10,10 @@ ul {
 
 
 .listTasks {
-  align-self: center;
   margin-bottom: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.label_name {
+  font-family: 'Gloria Hallelujah', cursive;
 }

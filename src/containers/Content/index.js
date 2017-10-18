@@ -19,14 +19,17 @@ class Content extends Component {
 
 	render() {
 		return (
-			<div>
-				<input
-					type="text"
-					ref={input => {
-						this.noteInput = input;
-					}}
-				/>
-				<button onClick={() => this.addNote()}>add Note</button>
+			<div className="addTasks">
+				<div className="addingTasks">
+					<input 
+						className="nameTasks"
+						type="text"
+						ref={input => {
+							this.noteInput = input;
+						}}
+					/>
+					<button className="addTasks-btn" onClick={() => this.addNote()}>add Note</button>
+				</div>
 				<ToDoList tasks={this.props.tasks} actions={this.props.actions}/>
 			</div>
 			)

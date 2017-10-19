@@ -8,7 +8,7 @@ class Filter extends Component {
   }
 
   render() {
-    const {filterBy} = this.props.tasks;
+    const { filterBy } = this.props.tasks;
     console.log(filterBy, 'gfdgd')
     return (
       <div className="filter-list">

@@ -39,7 +39,7 @@ class ToDoList extends Component {
 						}
 					</ul>
 
-				<Filter filteredTodo={this.props.tasks.filterBy} actions={this.props.actions} tasks={this.props}/>
+				<Filter filteredTodo={filteredTodo} actions={this.props.actions} tasks={this.props}/>
 
 			</div>
 		)

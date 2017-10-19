@@ -3,6 +3,7 @@ import * as actions from '../../actions'
 import { bindActionCreators } from 'redux'
 import { connect } from "react-redux";
 import { getTasks } from '../../actions';
+import {keycode} from 'keycode';
 
 import ToDoList from '../../components/List';
 
@@ -10,18 +11,20 @@ import "./style.css";
 
 class Content extends Component {
 	addNote() {
-		if (this.noteInput.value !== "") {
+		if (this.noteInput.value !== "" ) {
 			this.props.actions.addTodo(this.noteInput.value);
 			this.noteInput.value = "";
 		}
-	}
+}
+
 
 
 	render() {
 		return (
 			<div className="addTasks">
 				<div className="addingTasks">
-					<input 
+					<input
+						placeholder = "What needs to be done?"
 						className="nameTasks"
 						type="text"
 						ref={input => {
